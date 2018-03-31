@@ -1,6 +1,8 @@
 TARGET := talk
 
-TGT_LDFLAGS := -L${TARGET_DIR} -L/usr/local/cuda/lib64 -lcuda -lcudart 
+#I had better luck linking with nvcc for cuda projects 
+TGT_LINKER := nvcc 
+TGT_LDFLAGS := -L${TARGET_DIR}
 TGT_LDLIBS  := -lanimals
 TGT_PREREQS := libanimals.a
 
